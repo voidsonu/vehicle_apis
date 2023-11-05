@@ -8,7 +8,7 @@ export default class CommonModel {
   constructor(tableName: string, idColumn: string, searchColumn: string[]) {
     this.TABLE_NAME = tableName;
     this.ID_COLUMN = idColumn;
-    this.SEARCH_COLUMN_NAME = searchColumn
+    this.SEARCH_COLUMN_NAME = searchColumn;
   }
   // create
   create = async (input: any) => {
@@ -22,8 +22,9 @@ export default class CommonModel {
     VALUES('${Object.values(input)
       .map((el) => el)
       .join("', '")}')
-    * RETURNING
+    RETURNING*
     `;
+      console.log(sql);
       query("COMMIT");
       const { rows } = await query(sql);
       return rows;
@@ -39,7 +40,7 @@ export default class CommonModel {
   // list
   list = async (
     filter: any,
-    range?: { page: number; pageSize: number },
+    range?: any,
     sort?: any,
     fields?: string[],
     isCount?: boolean
@@ -50,7 +51,7 @@ export default class CommonModel {
     );
     try {
       // filters
-      let whereArr: string[] = [`"deletedAt" IS NULL`];
+      let whereArr: string[] = [`"deleted_at" IS NULL`];
 
       if (filter && Object.keys(filter).length) {
         Object.keys(filter).map((column) => {
@@ -93,7 +94,7 @@ export default class CommonModel {
       }
 
       // sorting
-      let sortArr: string[] = [`"createdAt" DESC`];
+      let sortArr: string[] = [`"created_at" DESC`];
       if (sort && Object.keys(sort).length > 0) {
         sortArr = Object.keys(sort).map((key) => `"${key}" ${sort[key]}`);
       }
@@ -181,7 +182,7 @@ export default class CommonModel {
       // const values: any = [...ids]
       const sql: string = `
             UPDATE "${this.TABLE_NAME}"
-            SET "deletedAt" = CURRENT_TIMESTAMP
+            SET "deleted_at" = CURRENT_TIMESTAMP
             WHERE "${this.ID_COLUMN}" IN(${ids.join(", ")})
         `;
       // executing query

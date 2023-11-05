@@ -18,6 +18,7 @@
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "jsonwebtoken": "^9.0.2",
+    "moment": "^2.29.4",
     "pg": "^8.11.3",
     "postgrator": "^5.0.1",
     "ts-node": "^10.9.1"

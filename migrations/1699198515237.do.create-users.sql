@@ -1,0 +1,11 @@
+-- 1699198515237.do.create-users.sql
+
+CREATE TABLE IF NOT EXISTS users(
+    "user_id" SERIAL PRIMARY KEY,
+    "first_name" VARCHAR(255) NOT NULL,
+    "last_name" VARCHAR(255) NULL,
+    status BOOLEAN NOT NULL DEFAULT TRUE,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMPTZ NULL,
+    deleted_at TIMESTAMPTZ NULL
+)
