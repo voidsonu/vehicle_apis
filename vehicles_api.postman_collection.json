@@ -1,0 +1,315 @@
+{
+	"info": {
+		"_postman_id": "f1576879-1802-4eb7-9b51-63c1d4e72804",
+		"name": "vehicles_api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20181727"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "user/create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"sonu\",\n    \"last_name\": \"chandara\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4001/v1/user/create",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"v1",
+								"user",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user/list",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"filter\": {}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4001/v1/user/list",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"v1",
+								"user",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user/update",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"user_id\": 1,\n  \"first_name\": \"test updated\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4001/v1/user/update",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"v1",
+								"user",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user/delete",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"filter\": {}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4001/v1/user/delete",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"v1",
+								"user",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "bookings",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": 1,\n    \"vehicle_id\": 2,\n    \"from_date\": \"2023-11-06\",\n    \"till_date\": \"2023-11-10\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4001/v1/booking/create",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"v1",
+								"booking",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"filter\": {}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4001/v1/booking/list",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"v1",
+								"booking",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"booking_id\": 1,\n  \"from_date\": \"2023-11-10\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4001/v1/booking/update",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"v1",
+								"booking",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"filter\": {}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4001/v1/booking/delete",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"v1",
+								"booking",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "vehicle",
+			"item": [
+				{
+					"name": "list",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"filter\": {\n       \"vehicle_model\": \"ducati\"\n   }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4001/v1/vehicle/list",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"v1",
+								"vehicle",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"vehicle_id\": 1,\n  \"first_name\": \"test updated\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:4001/v1/vehicle/update",
+							"host": [
+								"localhost"
+							],
+							"port": "4001",
+							"path": [
+								"v1",
+								"vehicle",
+								"update"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
